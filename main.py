@@ -1,5 +1,4 @@
-from ui import MinesweeperApp
+from ui import run
 
-if __name__ == "__main__":
-    app = MinesweeperApp()
-    app.mainloop()
+if name == "main":
+    run()
