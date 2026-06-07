@@ -1,74 +1,60 @@
-# Minesweeper (PyGame)
+# Minesweeper Multiplayer
 
-## Popis projektu
-Tento projekt je jednoduchá počítačová hra **Minesweeper (Hľadanie mín)** vytvorená v jazyku **Python** pomocou knižnice **PyGame**.  
-Cieľom hry je odkryť všetky bezpečné políčka bez toho, aby hráč klikol na mínu.
+## O projekte
 
-Projekt bol vytvorený ako školský projekt na precvičenie práce s triedami, objektmi, grafikou a udalosťami v PyGame.
+Minesweeper Multiplayer je implementácia klasickej hry Minesweeper vytvorená v jazyku Python pomocou knižnice Pygame. Hra podporuje režim pre jedného hráča aj multiplayer cez lokálnu sieť (LAN).
 
----
+## Funkcie
 
-## Funkcie hry
-- **3 úrovne obtiažnosti:**
-  - **Easy** (9×9, 10 mín)
-  - **Medium** (16×16, 40 mín)
-  - **Hard** (16×30, 99 mín)
-- Grafické rozhranie v PyGame
-- Počítanie času
-- Počítanie zostávajúcich mín
-- Ukladanie **Top 15** najlepších časov
-- Game Over (výhra / prehra)
-- Ovládanie myšou
-- Použitie farieb a textu
+- Singleplayer režim
+- Multiplayer LAN režim
+- Automatické vyhľadávanie serverov
+- Lobby systém
+- Integrovaný chat
+- Bodovací systém
+- Rekordy a najlepšie časy
+- Bezpečný prvý klik
+- Označovanie mín vlajkami
+- Automatické odkrývanie prázdnych polí
+- Chording (rýchle odkrývanie susedných polí)
 
----
+## Obtiažnosti
 
-## Ovládanie
-- Ľavé tlačidlo myši – odkrytie políčka
-- Pravé tlačidlo myši – označenie vlajkou
-- Stredné tlačidlo / ľavé + pravé – rýchle odkrytie okolia
-- F2 / ESC – nová hra
-- Kliknutie na smajlíka – nová hra
+- Easy (9×9, 10 mín)
+- Medium (16×16, 40 mín)
+- Hard (16×30, 99 mín)
 
----
+## Použité technológie
 
-## Štruktúra projektu
-```text
-.
-├── main.py        # Spustenie hry
-├── engine.py      # Herná logika (míny, výhra, prehra)
-├── ui.py          # Grafické rozhranie v PyGame
-├── scores.json    # Uložené najlepšie časy
-└── README.md      # Dokumentácia
+- Python
+- Pygame
+- TCP komunikácia
+- UDP komunikácia
+- HTTP server
+- JSON
 
----
+## Spustenie
 
-Štruktúra projektu
-⁨
-.
-├── main.py        # Spustenie hry
-├── engine.py      # Herná logika (míny, výhra, prehra)
-├── ui.py          # Grafické rozhranie v PyGame
-├── scores.json    # Uložené najlepšie časy
-└── README.md      # Dokumentácia
-⁩
----
-
-## Použité triedy
-
-- **MinesweeperEngine** – herná logika  
-- **Difficulty** – definícia obtiažnosti  
-- **ScoreManager** – ukladanie a načítanie skóre  
-- **MinesweeperPygameApp** – hlavná trieda hry a GUI  
-
-Projekt používa **objektovo orientované programovanie**.
-
----
-
-## Spustenie projektu
-
-- Otvorte projekt v **PyCharm**
-- Nainštalujte knižnicu **PyGame**:
+### Klient
 
 ```bash
-pip install pygame
+python main.py
+```
+
+### Server
+
+```bash
+python main.py --server
+```
+
+## Súbory projektu
+
+- `main.py` – spustenie hry alebo servera
+- `engine.py` – herná logika
+- `ui.py` – grafické rozhranie
+- `network.py` – sieťová komunikácia
+- `server.py` – multiplayer server
+
+## Cieľ hry
+
+Cieľom hry je odkryť všetky polia, ktoré neobsahujú mínu. Hráč prehrá po kliknutí na mínu a vyhrá po odkrytí všetkých bezpečných polí.
